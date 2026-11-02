@@ -16,38 +16,82 @@
         <span>charity: water</span>
       </div>
     </header>
-    <h1>Water Pouring Game</h1>
-    <p>Click the Start pouring button to begin! And don't forget to stop the faucet as close to the goal as you can.</p>
 
-    <p id="timer">Time left: 30 seconds</p>
-
-    <section class="scoreboard" aria-label="Game information">
-      <p>Water goal: <span id="goal">0</span> mL</p>
-      <p>Water poured: <span id="amount">0</span> mL</p>
-      <p>Total score: <span id="score">0</span></p>
-    </section>
-
-    <section class="scene" aria-label="Faucet and bottle">
-      <div class="faucet" aria-hidden="true">
-        <div class="faucet-pipe"></div>
-        <div class="faucet-handle"></div>
-        <div class="faucet-spout"></div>
-        <div class="faucet-nozzle"></div>
-      </div>
-
-      <div id="water-stream" class="water-stream" aria-hidden="true"></div>
-
-      <div class="bottle" role="img" aria-label="Bottle filling with water">
-        <div class="bottle-neck"></div>
-        <div class="bottle-body">
-        <div id="bottle-water" class="bottle-water"></div>
-      </div>
+    <section id="difficulty-screen" aria-labelledby="difficulty-title">
+      <h1 id="difficulty-title">Choose your difficulty</h1>
+      <p>Choose how quickly the water flows.</p>
+      <div class="action-buttons">
+        <button type="button" data-difficulty="easy">Easy</button>
+        <button type="button" data-difficulty="medium">Medium</button>
+        <button type="button" data-difficulty="hard">Hard</button>
       </div>
     </section>
 
-    <button id="faucet-button" type="button">Start pouring</button>
-    <button id="finish-button" type="button" hidden>Finalize attempt</button>
-    <p id="feedback" aria-live="polite">Try to pour as close to the goal as you can.</p>
+    <section id="game-screen" hidden>
+      <nav class="game-controls" aria-label="Game controls">
+        <button id="restart-game-button" type="button">Start over</button>
+        <button id="change-difficulty-button" type="button">Change difficulty</button>
+      </nav>
+
+      <h1>Water Pouring Game</h1>
+      <p>Click the Start pouring button to begin! And don't forget to stop the faucet as close to the goal as you can.</p>
+
+      <p id="timer">Time left: 30 seconds</p>
+
+      <section class="scoreboard" aria-label="Game information">
+        <p>Round: <span id="round">1</span> of 3</p>
+        <p>Water goal: <span id="goal">0</span> mL</p>
+        <p>Water poured: <span id="amount">0</span> mL</p>
+        <p>Total score: <span id="score">0</span></p>
+      </section>
+
+      <section class="scene" aria-label="Faucet and bottle">
+        <div class="faucet" aria-hidden="true">
+          <div class="faucet-pipe"></div>
+          <div class="faucet-handle"></div>
+          <div class="faucet-spout"></div>
+          <div class="faucet-nozzle"></div>
+        </div>
+
+        <div id="water-stream" class="water-stream" aria-hidden="true"></div>
+
+        <div class="bottle" role="img" aria-label="Bottle filling with water">
+          <div class="bottle-neck"></div>
+          <div class="bottle-body">
+            <div id="bottle-water" class="bottle-water"></div>
+          </div>
+        </div>
+      </section>
+
+      <h2 id="game-result" class="game-result" aria-live="assertive" hidden></h2>
+      <div class="action-buttons">
+        <button id="faucet-button" type="button">Start pouring</button>
+        <button id="finish-button" type="button" hidden>Finalize attempt</button>
+      </div>
+      <p id="feedback" aria-live="polite">Try to pour as close to the goal as you can.</p>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h3>Learn more</h3>
+        <a href="https://www.charitywater.org/">Visit charity: water</a>
+        <a href="https://www.charitywater.org/about">About us</a>
+        <a href="https://www.charitywater.org/our-work">Our work</a>
+        <a href="https://www.charitywater.org/impact">Impact</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Donation links</h3>
+        <a href="https://www.charitywater.org/donate/">Give</a>
+        <a href="https://www.charitywater.org/donate/the-spring">Join the spring</a>
+        <a href="https://www.charitywater.org/fundraise">Give to a fundraiser</a>
+        <a href="https://www.charitywater.org/donate/in-honor-of">Give in someone's honor</a>
+        <a href="https://www.charitywater.org/donate/water-project-sponsorship">Sponsor a community</a>
+        <a href="https://plannedgiving.charitywater.org/">Legacy and asset giving</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

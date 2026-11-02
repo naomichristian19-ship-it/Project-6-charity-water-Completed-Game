@@ -5,15 +5,19 @@
 body {
   background: #fff7e1;
   color: #003366;
-  font-family: sans-serif;
+  font-family: serif;
   text-align: center;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .brand-header {
   display: flex;
   justify-content: center;
-  margin-top: 24px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 12px;
 }
 
 .logo-spot {
@@ -24,8 +28,80 @@ body {
 }
 
 .game {
+  position: relative;
   width: min(600px, 100%);
   margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px 24px;
+}
+
+.game-controls {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  display: flex;
+  gap: 8px;
+}
+
+.game-controls button {
+  padding: 8px 12px;
+  font-size: 16px;
+}
+
+.site-footer {
+  background: #003366;
+  color: #fff7e1;
+  padding: 8px 20px 10px;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+.footer-column h3 {
+  color: #fff7e1;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 240px));
+  gap: 24px;
+  max-width: 520px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: start;
+  text-align: left;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+}
+
+.footer-column h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: #ffc907;
+}
+
+.site-footer a {
+  color: #fff7e1;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -40,25 +116,51 @@ body {
 }
 
    h1 {
-    font-size: 40px;
+    font-size: 34px;
+    margin: 16px 0 12px;
    }
 
     main > p {
-    font-size: 18px;
+    font-size: 16px;
+    margin: 10px 0;
    }
 
    .scoreboard {
     display: flex;
     justify-content: space-around;
+    margin: 14px 0;
    }
 
    #feedback {
-    font-size: 18px;
+    font-size: 16px;
+    margin: 12px 0;
+    white-space: pre-line;
    }
 
-.scene {
-     height: 350px;
+   .game-result {
+    margin: 8px 0 0;
+    color: #003366;
+    font-size: clamp(1.5rem, 7vw, 2.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    transition: opacity 1s ease;
+   }
+
+   .game-result.is-fading {
+    opacity: 0;
+   }
+
+   @media (prefers-reduced-motion: reduce) {
+    .game-result.is-fading {
+      transition: none;
+    }
+   }
+
+   .scene {
+     height: 260px;
      position: relative;
+     margin: 12px 0;
 }
 
 .faucet {
@@ -125,7 +227,7 @@ body {
 
 .bottle {
       position: absolute;
-      top: 150px;
+      top: 70px;
       left: 50%;
       transform: translateX(-50%);
       width: 80px;
@@ -167,14 +269,24 @@ body {
 
 }
 
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
 button {
   padding: 10px 20px;
   font-size: 18px;
-  background-color: #77a8bb;
-  color: white;
+  background-color: #ffc907;
+  color: #003366;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 0;
 
 }
 
